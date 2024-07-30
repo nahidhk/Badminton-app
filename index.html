@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badminton App</title>
 </head>
-<body>
+<body onload="dataset()">
 <header class="nav">
     <nav>
         <span class="navtext">
@@ -15,17 +15,26 @@
     </nav>
 </header>
 
-<section class="popup bg1">
+<section id="popup1" class="popup bg1">
     <br>
     <h1>Set Password</h1>
     <br>
-    <input oninput="okpass()" type="password" class="input" id="okpass" placeholder="New Password">
+    <input type="password" class="input" id="okpass" placeholder="New Password">
     <br><br>
     <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
     <br><br>
-    <button id="logbtn" class="btn vcc">Set Password</button><br>
-    <span class="red vcc"> Password Don't macth ! 
+    <center>
+    <button onclick="setpass()" id="logbtn" class="btn vcc">Set Password</button>
+</center>
+    <br>
+    <span id="error" class="red vcc"> Password Don't macth ! 
     </span>
+</section>
+<!-- login -->
+<section class="popup bg1 vcc" id="popup2">
+    <h1>Login</h1>
+    <br><br>
+    <input onclick="login()" type="password" class="input" id="login" placeholder="Password">
 </section>
 
 

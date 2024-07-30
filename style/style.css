@@ -59,9 +59,10 @@ body{
 .btn{
     height: 37px;
     width: 200px;
-    background-color: #fdeaea;
+    background-color: #000000;
     border: 1px solid #fdeaea;
     cursor: pointer;
+    color: #fff;
 }
 .vcc{
     display: none;
