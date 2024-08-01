@@ -129,3 +129,32 @@ n{
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
 }
+.win{
+    height: 100vh;
+    width: 100%;
+    background-color: #0f58f5c7;
+    position: fixed;
+    top: 0;
+}
+.img{
+    height: 150px;
+    width: 150px;
+}
+.img img{
+    height: 100%;
+    width: 100%;
+    animation: img 1s ;
+    -webkit-animation: img 1s infinite;
+    animation-direction: alternate;  
+}
+@keyframes img{
+    0%{ transform: rotateZ(40deg); -webkit-transform: rotateZ(40deg); -moz-transform: rotateZ(40deg); -ms-transform: rotateZ(40deg); -o-transform: rotateZ(40deg);
+}
+
+    100%{ transform: rotateZ(-40deg); -webkit-transform: rotateZ(-40deg); -moz-transform: rotateZ(-40deg); -ms-transform: rotateZ(-40deg); -o-transform: rotateZ(-40deg);
+}
+}
+.text{
+    color: #fff;
+    font-size: 2rem;
+}

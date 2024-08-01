@@ -14,13 +14,12 @@ var logpopup = localStorage.getItem("setbox");
 var loginio = localStorage.getItem("loginbox");
 let point = 0;
 
-// Onload event
+// ! Onload event
 function dataset() { 
     document.getElementById("popup1").style.display = logpopup;
     document.getElementById("popup2").style.display = loginio;
     document.getElementById("pointteam1").value = savedTeam1point;
 }
-
 function conpass() {
     var okpass = document.getElementById("okpass").value;
     var conpass = document.getElementById("conpass").value;
@@ -79,6 +78,7 @@ function pointpls1(){
     var point1 = document.getElementById("pointteam1").value;
     const teamname1 = document.getElementById("teamname1").value;
     localStorage.setItem(teamname1, point1);
+    winteam1();
 }
 function formatDate12Hour(date) {
     const day = date.getDate().toString().padStart(2, '0');
@@ -100,3 +100,11 @@ function dateobject(){
 }
 dateobject()
 
+function winteam1(){
+    var okok1 = parseInt(document.getElementById("pointteam1").value, 10);
+    if (okok1 === 21) {
+        document.getElementById("pointteam1").value = "WIN";
+    } else {
+     
+    }
+}
