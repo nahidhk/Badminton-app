@@ -1,45 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badminton App</title>
 </head>
-<body onload="dataset()">
-<header class="nav">
-    <nav>
-        <span class="navtext">
-            Badminton
-        </span>
-    </nav>
-</header>
 
-<section id="popup1" class="popup bg1">
-    <br>
-    <h1>Set Password</h1>
-    <br>
-    <input type="password" class="input" id="okpass" placeholder="New Password">
-    <br><br>
-    <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
-    <br><br>
-    <center>
-    <button onclick="setpass()" id="logbtn" class="btn vcc">Set Password</button>
-</center>
-    <br>
-    <span id="error" class="red vcc"> Password Don't macth ! 
-    </span>
-</section>
-<!-- login -->
-<section class="popup bg1 vcc" id="popup2">
-    <h1>Login</h1>
-    <br><br>
-    <input onclick="login()" type="password" class="input" id="login" placeholder="Password">
-</section>
+<body onload="dataset()">
+    <header class="nav">
+        <nav>
+            <span class="navtext">
+                Badminton
+            </span>
+            <span id="vold" onclick="listok()" class="navmenu vcc">
+                Menu
+            </span>
+        </nav>
+    </header>
+
+    <section id="popup1" class="popup bg1">
+        <br>
+        <h1>Set Password</h1>
+        <br>
+        <input type="password" class="input" id="okpass" placeholder="New Password">
+        <br><br>
+        <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
+        <br><br>
+        <center>
+            <button onclick="setpass()" id="logbtn" class="btn vcc">Set Password</button>
+        </center>
+        <br>
+        <span id="error" class="red vcc"> Password Don't macth !
+        </span>
+    </section>
+    <!-- login -->
+    <section class="popup bg1 vcc" id="popup2">
+        <h1>Login</h1>
+        <br><br>
+        <n id="rong"></n>
+        <input oninput="oninti()" type="password" class="input" id="login" placeholder="Password">
+        <br><br>
+        <button onclick="logindat()" class="btn">Login</button>
+
+    </section>
+
+    <section id="rox" class="flex ">
+        <div class="row no1">
+            <br><br><br><br>
+            <center>
+                <input type="text" id="pointteam1" class="point" placeholder="00">
+                <br><br>
+                <input type="text" class="teamname" oninput="teamname1()" id="teamname1" placeholder="Tap to edit team name">
+            </center>
+            <br><br>
+            <blockquote>
+                <p class="date"></p>
+                <br><br><br>
+            </blockquote>
+            <center>
+                <button onclick="pointpls1()" class="btn1pl">1+</button>
+
+            </center>
+            <br>
+            <p>
+                More
+            </p>
+        </div>
+
+        <div class="row no2">
+
+        </div>
+    </section>
 
 
     <!-- The Script -->
-     <script src="js/script.js">
-     </script>
+    <script src="js/script.js">
+    </script>
 </body>
+
 </html>
