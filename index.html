@@ -64,32 +64,52 @@
                 <button onclick="pointpls1()" class="btn1pl">1+</button>
 
             </center>
-            <br>
-            <p>
-                More
-            </p>
+           
+           
         </div>
 
         <div class="row no2">
+            <br><br><br><br>
+            <center>
+                <input type="text" id="pointteam2" class="point" placeholder="00">
+                <br><br>
+                <input type="text" class="teamname" oninput="teamname2()" id="teamname2"
+                    placeholder="Tap to edit team name">
+            </center>
+            <br><br>
+            <blockquote>
+                <p class="date"></p>
+                <br><br><br>
+            </blockquote>
+            <center>
+                <button onclick="pointpls2()" class="btn1pl">1+</button>
 
+            </center>
         </div>
     </section>
 
 
     <!--  WIN BOX  -->
-      <section class="win">
+    <section id="win" class="win vcc">
         <br>
         <center>
             <div class="img">
                 <img src="img/winner.png" />
-                <span class="text"><b></b></span>
-                <br>
-                <p></p>
-
+                <span class="text"><b class="wintext"></b></span>
+                </div>
+                <div style="color: #fff;width: 80%;">
+                    <br>
+                <p class="fff"><span class="wintext"></span>, you are the king and winner of this match.
+                    Best wishes for you!</p>
+              <h1><span>team1</span> <n>VS</n> <span>Team2</span></h1>
+                <p class="fff">You can save this match on a server and download it.</p>
+                <button class="btn">Confrom</button>
             </div>
+                </div>
         </center>
 
-      </section>
+
+    </section>
 
 
     <!-- The Script -->

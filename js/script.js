@@ -104,6 +104,8 @@ function winteam1(){
     var okok1 = parseInt(document.getElementById("pointteam1").value, 10);
     if (okok1 === 21) {
         document.getElementById("pointteam1").value = "WIN";
+        document.getElementById("win").style.display="block";
+        document.querySelector(".wintext").innerHTML= viweteamname1;
     } else {
      
     }
