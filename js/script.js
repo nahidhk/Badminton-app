@@ -6,13 +6,10 @@ console.log("open Badminton App Js");
 // });
 
 // Declare all variables at the start
-var viweteamname1 = localStorage.getItem("teamname1");
-var theteam1 = localStorage.getItem("viweteamname1");
-let oder1 = localStorage.getItem("teamname1");
-let savedTeam1point = localStorage.getItem(oder1);
 var logpopup = localStorage.getItem("setbox");
 var loginio = localStorage.getItem("loginbox");
-let point = 0;
+
+// login system
 
 // ! Onload event
 function dataset() { 
@@ -67,19 +64,7 @@ function logindat() {
     }
 }
 
-function teamname1(){
-    const teamname1 = document.getElementById("teamname1").value;
-    localStorage.setItem("teamname1", teamname1);
-}
-
-function pointpls1(){
-    point += 1;
-    document.getElementById("pointteam1").value = point;
-    var point1 = document.getElementById("pointteam1").value;
-    const teamname1 = document.getElementById("teamname1").value;
-    localStorage.setItem(teamname1, point1);
-    winteam1();
-}
+//  Date system
 function formatDate12Hour(date) {
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -98,15 +83,4 @@ const now = new Date();
 function dateobject(){
    document.querySelector(".date").innerHTML=formatDate12Hour(now);
 }
-dateobject()
-
-function winteam1(){
-    var okok1 = parseInt(document.getElementById("pointteam1").value, 10);
-    if (okok1 === 21) {
-        document.getElementById("pointteam1").value = "WIN";
-        document.getElementById("win").style.display="block";
-        document.querySelector(".wintext").innerHTML= viweteamname1;
-    } else {
-     
-    }
-}
+dateobject();
