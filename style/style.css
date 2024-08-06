@@ -161,3 +161,11 @@ n{
 .fff{
     color: #fff;
 }
+label, input{
+    margin: 20px;
+}
+.stext{
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: #000;
+}

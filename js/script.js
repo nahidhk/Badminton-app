@@ -9,13 +9,14 @@ console.log("open Badminton App Js");
 var logpopup = localStorage.getItem("setbox");
 var loginio = localStorage.getItem("loginbox");
 
+
 // login system
 
 // ! Onload event
-function dataset() { 
+function dataset() {
     document.getElementById("popup1").style.display = logpopup;
     document.getElementById("popup2").style.display = loginio;
-    document.getElementById("pointteam1").value = savedTeam1point;
+
 }
 function conpass() {
     var okpass = document.getElementById("okpass").value;
@@ -57,8 +58,8 @@ function logindat() {
     if (legel == logdata) {
         document.getElementById("popup2").style.display = "none";
         document.getElementById("vold").style.display = "block";
-        document.getElementById("rox").style.display = "flex";
-        document.getElementById("teamname1").value = viweteamname1;
+        document.getElementById("roxix").style.display = "block";
+
     } else {
         document.getElementById("rong").innerHTML = "error Password!";
     }
@@ -80,7 +81,20 @@ function formatDate12Hour(date) {
 }
 const now = new Date();
 
-function dateobject(){
-   document.querySelector(".date").innerHTML=formatDate12Hour(now);
+// function dateobject(){
+//    document.querySelector(".date").innerHTML=formatDate12Hour(now);
+// }
+// dateobject();
+function setteam() {
+    var teamname1 = document.getElementById("team1").value;
+    var teamname2 = document.getElementById("team2").value;
+    // show point box
+    document.getElementById("apikey").style.display = "flex";
+    document.getElementById("roxix").style.display = "none";
+    //  !The Set Server 
+    sessionStorage.setItem("team1",teamname1);
+    sessionStorage.setItem("team2",teamname2);
+    document.getElementById("ahowteam1").innerHTML = teamname1;
+    document.getElementById("ahowteam2").innerHTML = teamname2;
+
 }
-dateobject();
