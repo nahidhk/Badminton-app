@@ -78,8 +78,10 @@ body{
 .navmenu{
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 8px;
     cursor: pointer;
+    color: #fff;
+    font-size: 30px;
 }
 .flex{
     height: 100vh;
@@ -161,7 +163,7 @@ n{
 .fff{
     color: #fff;
 }
-label, input{
+.mon > .im{
     margin: 20px;
 }
 .stext{

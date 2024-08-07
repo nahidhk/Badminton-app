@@ -8,7 +8,9 @@ console.log("open Badminton App Js");
 // Declare all variables at the start
 var logpopup = localStorage.getItem("setbox");
 var loginio = localStorage.getItem("loginbox");
-
+var loaddataroxix = sessionStorage.getItem("teamsetbox");
+const loadteamname1 = sessionStorage('steamname1');
+const loadteamname2 = sessionStorage('steamname2');
 
 // login system
 
@@ -16,6 +18,7 @@ var loginio = localStorage.getItem("loginbox");
 function dataset() {
     document.getElementById("popup1").style.display = logpopup;
     document.getElementById("popup2").style.display = loginio;
+
 
 }
 function conpass() {
@@ -58,7 +61,14 @@ function logindat() {
     if (legel == logdata) {
         document.getElementById("popup2").style.display = "none";
         document.getElementById("vold").style.display = "block";
-        document.getElementById("roxix").style.display = "block";
+        if (loaddataroxix == "none") {
+            document.getElementById("roxix").style.display = "none";
+            document.getElementById("apikey").style.display = "flex";
+            document.getElementById("view1").innerHTML = loadteamname1;
+            document.getElementById("view2").innerHTML = loadteamname2;     
+        } else {
+            document.getElementById("roxix").style.display = "block";
+        }
 
     } else {
         document.getElementById("rong").innerHTML = "error Password!";
@@ -80,11 +90,11 @@ function formatDate12Hour(date) {
     return `${day}-${month}-${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
 }
 const now = new Date();
-
-// function dateobject(){
-//    document.querySelector(".date").innerHTML=formatDate12Hour(now);
-// }
-// dateobject();
+function dateshow(){
+    document.getElementById("date1").innerHTML = formatDate12Hour(now);
+    document.getElementById("date2").innerHTML = formatDate12Hour(now);
+}
+dateshow();
 function setteam() {
     var teamname1 = document.getElementById("team1").value;
     var teamname2 = document.getElementById("team2").value;
@@ -92,9 +102,9 @@ function setteam() {
     document.getElementById("apikey").style.display = "flex";
     document.getElementById("roxix").style.display = "none";
     //  !The Set Server 
-    sessionStorage.setItem("team1",teamname1);
-    sessionStorage.setItem("team2",teamname2);
-    document.getElementById("ahowteam1").innerHTML = teamname1;
-    document.getElementById("ahowteam2").innerHTML = teamname2;
-
+    sessionStorage.setItem("steamname1", teamname1);
+    sessionStorage.setItem("steamname1", teamname2);
+    document.getElementById("view1").innerHTML = teamname1;
+    document.getElementById("view2").innerHTML = teamname2;
+    sessionStorage.setItem('teamsetbox', "none");
 }

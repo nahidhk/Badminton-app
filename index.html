@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +16,10 @@
                 Badminton
             </span>
             <span id="vold" onclick="listok()" class="navmenu vcc">
-                Menu
+                <i class="bi bi-list"></i>
             </span>
         </nav>
     </header>
-
     <section id="popup1" class="popup bg1">
         <br>
         <h1>Set Password</h1>
@@ -43,79 +43,56 @@
         <input oninput="oninti()" type="password" class="input" id="login" placeholder="Password">
         <br><br>
         <button onclick="logindat()" class="btn">Login</button>
-
     </section>
-
     <!-- team input system  -->
-<section id="roxix" class="popup vcc">
-    <blockquote>
+    <section id="roxix" class="popup vcc mon">
+        <blockquote>
+            <center>
+                <h1>
+                    Set Team Name
+                </h1>
+            </center>
+            <label class="label">
+                Input Team Name1 <n>*</n>
+            </label><br>
+            <input type="text" class="input im" id="team1" placeholder="team Name 1">
+            <br>
+            <label class="label">
+                Input Team Name2 <n>*</n>
+            </label><br>
+            <input type="text" class="input im" id="team2" placeholder="team Name 2">
+        </blockquote>
         <center>
-            <h1>
-                Set Team Name
-            </h1>
+            <button onclick="setteam()" class="btn">
+                Set Team
+            </button>
         </center>
-    <label class="label">
-       Input Team Name1 <n>*</n>
-    </label><br>
-    <input type="text" class="input" id="team1" placeholder="team Name 1">
-    <label class="label">
-        Input Team Name2 <n>*</n>
-     </label><br>
-     <input type="text" class="input" id="team2" placeholder="team Name 2">
-</blockquote>
-<center>
-    <button onclick="setteam()" class="btn">
-        Set Team
-    </button>
-</center>
-</section>
-
-
-
+    </section>
     <!-- point system -->
-
     <section id="apikey" class="flex ">
         <!-- point team 1 -->
         <div class="row no1">
             <br><br><br><br>
             <center>
                 <input type="text" id="" class="point" placeholder="00">
-                <br><br>
-               <span class="stext" id="showteam1"></>
-            </center>
-            <br><br>
-            <blockquote>
-                <p class="date"></p>
-                <br><br><br>
-            </blockquote>
-            <center>
+                <br>
+                <p class="stext" id="view1">No Input Team</p>
+                <p id="date1"></p>
                 <button onclick="" class="btn1pl">1+</button>
-
             </center>
-           
-           
         </div>
-<!--  point team 2 -->
+        <!--  point team 2 -->
         <div class="row no2">
             <br><br><br><br>
             <center>
-                <input type="text" id="pointteam2" class="point" placeholder="00">
-                <br><br>
-                <span class="stext" id="showteam2"></span>
-            </center>
-            <br><br>
-            <blockquote>
-                <p class="date2"></p>
-                <br><br><br>
-            </blockquote>
-            <center>
-                <button onclick="pointpls2()" class="btn1pl">1+</button>
-
+                <input type="text" id="" class="point" placeholder="00">
+                <br>
+                <p class="stext" id="view2">No Input Team</p>
+                <p id="date2"></p>
+                <button onclick="" class="btn1pl">1+</button>
             </center>
         </div>
     </section>
-
-
     <!--  WIN BOX  -->
     <section id="win" class="win vcc">
         <br>
@@ -123,22 +100,20 @@
             <div class="img">
                 <img src="img/winner.png" />
                 <span class="text"><b class="wintext"></b></span>
-                </div>
-                <div style="color: #fff;width: 80%;">
-                    <br>
+            </div>
+            <div style="color: #fff;width: 80%;">
+                <br>
                 <p class="fff"><span class="wintext"></span>, you are the king and winner of this match.
                     Best wishes for you!</p>
-              <h1><span>team1</span> <n>VS</n> <span>Team2</span></h1>
+                <h1><span>team1</span>
+                    <n>VS</n> <span>Team2</span>
+                </h1>
                 <p class="fff">You can save this match on a server and download it.</p>
                 <button class="btn">Confrom</button>
             </div>
-                </div>
+            </div>
         </center>
-
-
     </section>
-
-
     <!-- The Script -->
     <script src="js/script.js">
     </script>
