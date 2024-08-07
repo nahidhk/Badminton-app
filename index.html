@@ -74,22 +74,22 @@
         <div class="row no1">
             <br><br><br><br>
             <center>
-                <input type="text" id="" class="point" placeholder="00">
+                <input onclick="error()" type="text" id="point1" class="point" placeholder="00">
                 <br>
                 <p class="stext" id="view1">No Input Team</p>
                 <p id="date1"></p>
-                <button onclick="" class="btn1pl">1+</button>
+                <button onclick="pointpls1()" class="btn1pl">1+</button>
             </center>
         </div>
         <!--  point team 2 -->
         <div class="row no2">
             <br><br><br><br>
             <center>
-                <input type="text" id="" class="point" placeholder="00">
+                <input onclick="error()" type="text" id="point2" class="point" placeholder="00">
                 <br>
                 <p class="stext" id="view2">No Input Team</p>
                 <p id="date2"></p>
-                <button onclick="" class="btn1pl">1+</button>
+                <button onclick="pointpls2()" class="btn1pl">1+</button>
             </center>
         </div>
     </section>
@@ -99,14 +99,14 @@
         <center>
             <div class="img">
                 <img src="img/winner.png" />
-                <span class="text"><b class="wintext"></b></span>
+                <span class="text"><b id="winname"></b></span>
             </div>
             <div style="color: #fff;width: 80%;">
                 <br>
-                <p class="fff"><span class="wintext"></span>, you are the king and winner of this match.
+                <p  class="fff"><span id="wintext"></span>, you are the king and winner of this match.
                     Best wishes for you!</p>
-                <h1><span>team1</span>
-                    <n>VS</n> <span>Team2</span>
+                <h1><span id="teamshow1"></span>
+                    <n>VS</n> <span id="teamshow2"></span>
                 </h1>
                 <p class="fff">You can save this match on a server and download it.</p>
                 <button class="btn">Confrom</button>

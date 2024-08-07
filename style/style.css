@@ -112,6 +112,7 @@ n{
     outline-color: none;
     background-color: #00000000;
     font-family: 'Courier New', Courier, monospace;
+    cursor: none;
 }
 .teamname{
     outline: none;

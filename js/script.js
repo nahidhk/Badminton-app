@@ -9,11 +9,15 @@ console.log("open Badminton App Js");
 var logpopup = localStorage.getItem("setbox");
 var loginio = localStorage.getItem("loginbox");
 var loaddataroxix = sessionStorage.getItem("teamsetbox");
-const loadteamname1 = sessionStorage('steamname1');
-const loadteamname2 = sessionStorage('steamname2');
+const loadteamname01 = sessionStorage.getItem("steamname1");
+const loadteamname02 = sessionStorage.getItem("steamname2");
+let point = 0;
+var win = document.getElementById("win");
+var point1 = document.getElementById("point1").value;
+var point2 = document.getElementById("point2").value;
+
 
 // login system
-
 // ! Onload event
 function dataset() {
     document.getElementById("popup1").style.display = logpopup;
@@ -64,8 +68,8 @@ function logindat() {
         if (loaddataroxix == "none") {
             document.getElementById("roxix").style.display = "none";
             document.getElementById("apikey").style.display = "flex";
-            document.getElementById("view1").innerHTML = loadteamname1;
-            document.getElementById("view2").innerHTML = loadteamname2;     
+            document.getElementById("view1").innerHTML = loadteamname01;
+            document.getElementById("view2").innerHTML = loadteamname02;
         } else {
             document.getElementById("roxix").style.display = "block";
         }
@@ -90,21 +94,61 @@ function formatDate12Hour(date) {
     return `${day}-${month}-${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
 }
 const now = new Date();
-function dateshow(){
+function dateshow() {
     document.getElementById("date1").innerHTML = formatDate12Hour(now);
     document.getElementById("date2").innerHTML = formatDate12Hour(now);
 }
 dateshow();
 function setteam() {
-    var teamname1 = document.getElementById("team1").value;
-    var teamname2 = document.getElementById("team2").value;
     // show point box
     document.getElementById("apikey").style.display = "flex";
     document.getElementById("roxix").style.display = "none";
     //  !The Set Server 
     sessionStorage.setItem("steamname1", teamname1);
-    sessionStorage.setItem("steamname1", teamname2);
+    sessionStorage.setItem("steamname2", teamname2);
     document.getElementById("view1").innerHTML = teamname1;
     document.getElementById("view2").innerHTML = teamname2;
     sessionStorage.setItem('teamsetbox', "none");
+}
+function error() {
+    alert("This Function is not set this App please call the developer");
+}
+function pointpls1() {
+    point += 1;
+    var pointset = document.getElementById("point1");
+    pointset.value = point;
+    if (point1 == 20) {
+        pointset.value = "WIN";
+        win.style.display = "block";
+        document.getElementById("wintext").innerHTML = loadteamname01;
+        document.getElementById("winname").innerHTML = loadteamname01;
+        document.getElementById("teamshow1").innerHTML=loadteamname01;
+        document.getElementById("teamshow2").innerHTML=loadteamname02;
+    }
+}
+function pointpls2() {
+    point += 1;
+    var pointset = document.getElementById("point2");
+    pointset.value = point;
+    if (point2 == 20) {
+        pointset.value = "WIN";
+        win.style.display = "block";
+        document.getElementById("wintext").innerHTML = loadteamname02;
+        document.getElementById("winname").innerHTML = loadteamname02;
+        document.getElementById("teamshow2").innerHTML=loadteamname01;
+        document.getElementById("teamshow1").innerHTML=loadteamname02;
+    }
+}
+
+function winteam1(){
+    // create a json file 
+
+    const json = `[{
+    "team1":"${loadteamname01}",
+    "team2":"${loadteamname02}",
+    "win":"${loadteamname01}",
+    "date":"${formatDate12Hour(now)}",
+    "team1allpoint":"",
+    "team2allpoint":""
+}]`
 }
