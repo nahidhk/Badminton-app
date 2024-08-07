@@ -3,6 +3,9 @@
     src: url("/font/font.ttf");
 }
 body{
+    background-image: url("/img/bg2.png");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
     padding: 0;
     margin: 0;
     font-family: font;
@@ -22,6 +25,9 @@ body{
     position: absolute;
     top: 8px;
     left: 50px;
+}
+h1{
+margin:0;
 }
 .popup{
     top: 50%;
@@ -48,8 +54,10 @@ body{
     0%{opacity: 0;}100%{opacity: 1;}
 }
 .bg1{
-    background-color: aquamarine;
     text-align: center;
+    background-image: url("/img/bg.png");
+}
+.blr{ backdrop-filter: blur(2px); height: 100%; width: 100%; background-color: #ffffffac; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px;
 }
 .input{
     background-color: rgba(245, 245, 220, 0);
