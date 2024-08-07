@@ -11,10 +11,10 @@ var loginio = localStorage.getItem("loginbox");
 var loaddataroxix = sessionStorage.getItem("teamsetbox");
 const loadteamname01 = sessionStorage.getItem("steamname1");
 const loadteamname02 = sessionStorage.getItem("steamname2");
-let point = 0;
+var pointon1 = 0;
+var pointon2 = 0;
 var win = document.getElementById("win");
-var point1 = document.getElementById("point1").value;
-var point2 = document.getElementById("point2").value;
+
 
 
 // login system
@@ -22,8 +22,6 @@ var point2 = document.getElementById("point2").value;
 function dataset() {
     document.getElementById("popup1").style.display = logpopup;
     document.getElementById("popup2").style.display = loginio;
-
-
 }
 function conpass() {
     var okpass = document.getElementById("okpass").value;
@@ -100,6 +98,8 @@ function dateshow() {
 }
 dateshow();
 function setteam() {
+    var teamname1 = document.getElementById("team1").value;
+    var teamname2 = document.getElementById("team2").value;
     // show point box
     document.getElementById("apikey").style.display = "flex";
     document.getElementById("roxix").style.display = "none";
@@ -114,41 +114,66 @@ function error() {
     alert("This Function is not set this App please call the developer");
 }
 function pointpls1() {
-    point += 1;
+    const loadteamname01 = sessionStorage.getItem("steamname1");
+    const loadteamname02 = sessionStorage.getItem("steamname2");
+    pointon1 += 1;
     var pointset = document.getElementById("point1");
-    pointset.value = point;
-    if (point1 == 20) {
+    sessionStorage.setItem("addpoint1", pointon1);
+    pointset.value = pointon1;
+    if (pointon1 == 21) {
         pointset.value = "WIN";
         win.style.display = "block";
         document.getElementById("wintext").innerHTML = loadteamname01;
         document.getElementById("winname").innerHTML = loadteamname01;
-        document.getElementById("teamshow1").innerHTML=loadteamname01;
-        document.getElementById("teamshow2").innerHTML=loadteamname02;
+        document.getElementById("teamshow1").innerHTML = loadteamname01;
+        document.getElementById("teamshow2").innerHTML = loadteamname02;
+        document.getElementById("cbtn").innerHTML = `<button onclick="winteam1()" class="btn">Confrom</button>`
     }
 }
 function pointpls2() {
-    point += 1;
+    const loadteamname01 = sessionStorage.getItem("steamname1");
+    const loadteamname02 = sessionStorage.getItem("steamname2");
+    pointon2 += 1;
     var pointset = document.getElementById("point2");
-    pointset.value = point;
-    if (point2 == 20) {
+    sessionStorage.setItem("addpoint2", pointon2);
+    pointset.value = pointon2;
+    if (pointon2 == 21) {
         pointset.value = "WIN";
         win.style.display = "block";
         document.getElementById("wintext").innerHTML = loadteamname02;
         document.getElementById("winname").innerHTML = loadteamname02;
-        document.getElementById("teamshow2").innerHTML=loadteamname01;
-        document.getElementById("teamshow1").innerHTML=loadteamname02;
+        document.getElementById("teamshow2").innerHTML = loadteamname02;
+        document.getElementById("teamshow1").innerHTML = loadteamname01;
+        document.getElementById("cbtn").innerHTML = `<button onclick="winteam2()" class="btn">Confrom</button>`
     }
 }
 
-function winteam1(){
-    // create a json file 
-
-    const json = `[{
-    "team1":"${loadteamname01}",
-    "team2":"${loadteamname02}",
-    "win":"${loadteamname01}",
-    "date":"${formatDate12Hour(now)}",
-    "team1allpoint":"",
-    "team2allpoint":""
-}]`
+function winteam1() {
+    const loadteamname01 = sessionStorage.getItem("steamname1");
+    const loadteamname02 = sessionStorage.getItem("steamname2");
+    var pointaddteam2 = sessionStorage.getItem("addpoint2");
+    var name = loadteamname01 + "VS" + loadteamname02;
+    // Create a JSON object
+    const json = [{
+        "team1": loadteamname01,
+        "team2": loadteamname02,
+        "win": loadteamname01,
+        "date": formatDate12Hour(now),
+        "team1allpoint": "21",
+        "team2allpoint": pointaddteam2
+    }];
+    // Store the JSON in localStorage
+    localStorage.setItem(name, JSON.stringify(json));
+    // Convert the JSON object to a string and create a Blob
+    const jsonString = JSON.stringify(json);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${name}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    sessionStorage.clear()
+    window.location.href = "/"
 }
+
