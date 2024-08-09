@@ -180,3 +180,32 @@ n{
     font-family: sans-serif;
     color: #000;
 }
+.f12{
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
+
+}
+.fbs{
+    
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .f12{
+        display: none;
+    }
+}
