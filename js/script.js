@@ -46,6 +46,7 @@ function setpass() {
     localStorage.setItem("loginbox", "block");
     document.getElementById("popup1").style.display = "none";
     window.location.href = "/";
+    alert('Please Click the "Leave"');
 }
 
 function oninti() {
