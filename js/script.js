@@ -1,9 +1,9 @@
 console.log("open Badminton App Js");
 
-// window.addEventListener('beforeunload', function (e) {
-//     e.preventDefault();
-//     e.returnValue = 'আপনি কি নিশ্চিত যে আপনি পৃষ্ঠাটি পুনরায় লোড করতে চান?';
-// });
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = 'আপনি কি নিশ্চিত যে আপনি পৃষ্ঠাটি পুনরায় লোড করতে চান?';
+});
 
 // Declare all variables at the start
 var logpopup = localStorage.getItem("setbox");
