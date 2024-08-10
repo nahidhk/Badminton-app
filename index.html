@@ -11,6 +11,10 @@
 </head>
 
 <body onload="dataset()">
+    <audio id="aclick" src="audio/click.wav"></audio>
+    <audio id="awin" src="audio/win.wav"></audio>
+    <audio id="wlcaudio" src="audio/wlc.mp3"></audio>
+    <audio id="teamaudio" src="audio/team.mp3"></audio>
  <section class="f12">
 <div class="fbs">
     <h1>
@@ -38,7 +42,7 @@
         <br>
         <h1>Set Password</h1>
         <br>
-        <input type="password" class="input" id="okpass" placeholder="New Password">
+        <input onclick="wlcadio()" type="password" class="input" id="okpass" placeholder="New Password">
         <br><br>
         <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
         <br><br>
@@ -78,7 +82,7 @@
             <label class="label">
                 Input Team Name1 <n>*</n>
             </label><br>
-            <input type="text" class="input im" id="team1" placeholder="team Name 1">
+            <input onclick="teamaudio()" type="text" class="input im" id="team1" placeholder="team Name 1">
             <br>
             <label class="label">
                 Input Team Name2 <n>*</n>

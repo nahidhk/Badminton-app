@@ -129,7 +129,9 @@ function pointpls1() {
         document.getElementById("teamshow1").innerHTML = loadteamname01;
         document.getElementById("teamshow2").innerHTML = loadteamname02;
         document.getElementById("cbtn").innerHTML = `<button onclick="winteam1()" class="btn">Confrom</button>`
+        winaudio();
     }
+    audioapkclick();
 }
 function pointpls2() {
     const loadteamname01 = sessionStorage.getItem("steamname1");
@@ -146,7 +148,9 @@ function pointpls2() {
         document.getElementById("teamshow2").innerHTML = loadteamname02;
         document.getElementById("teamshow1").innerHTML = loadteamname01;
         document.getElementById("cbtn").innerHTML = `<button onclick="winteam2()" class="btn">Confrom</button>`
+        winaudio();
     }
+    audioapkclick();
 }
 
 function winteam1() {
@@ -226,3 +230,15 @@ localStorage.setItem("teamdata", JSON.stringify(existingData));
     window.location.href = "/"
 }
 
+function audioapkclick(){
+    document.getElementById("aclick").play();
+}
+function winaudio(){
+    document.getElementById("awin").play();
+}
+function wlcadio(){
+    document.getElementById("wlcaudio").play();
+}
+function teamaudio(){
+    document.getElementById("teamaudio").play();
+}
