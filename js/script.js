@@ -155,18 +155,27 @@ function winteam1() {
     var pointaddteam2 = sessionStorage.getItem("addpoint2");
     var name = loadteamname01 + "VS" + loadteamname02;
     // Create a JSON object
-    const json = [{
-        "team1": loadteamname01,
-        "team2": loadteamname02,
-        "win": loadteamname01,
-        "date": formatDate12Hour(now),
-        "team1allpoint": "21",
-        "team2allpoint": pointaddteam2
-    }];
-    // Store the JSON in localStorage
-    localStorage.setItem(name, JSON.stringify(json));
+   // Load existing data from localStorage
+let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
+
+// Create new match data
+const newMatchData = {
+    "team1": loadteamname01,
+    "team2": loadteamname02,
+    "win": loadteamname01,
+    "date": formatDate12Hour(now),
+    "team1allpoint": "21",
+    "team2allpoint": pointaddteam2
+};
+
+// Add the new data to the existing array
+existingData.push(newMatchData);
+
+// Store the updated array back to localStorage
+localStorage.setItem("teamdata", JSON.stringify(existingData));
+
     // Convert the JSON object to a string and create a Blob
-    const jsonString = JSON.stringify(json);
+    const jsonString = JSON.stringify(newMatchData);
     const blob = new Blob([jsonString], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -182,21 +191,30 @@ function winteam1() {
 function winteam2() {
     const loadteamname01 = sessionStorage.getItem("steamname1");
     const loadteamname02 = sessionStorage.getItem("steamname2");
-    var pointaddteam2 = sessionStorage.getItem("addpoint2");
+    var pointaddteam1 = sessionStorage.getItem("addpoint1");
     var name = loadteamname01 + "VS" + loadteamname02;
     // Create a JSON object
-    const json = [{
-        "team1": loadteamname01,
-        "team2": loadteamname02,
-        "win": loadteamname02,
-        "date": formatDate12Hour(now),
-        "team1allpoint": pointaddteam2,
-        "team2allpoint": "21"
-    }];
-    // Store the JSON in localStorage
-    localStorage.setItem(name, JSON.stringify(json));
+ // Load existing data from localStorage
+let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
+
+// Create new match data
+const newMatchData = {
+    "team1": loadteamname01,
+    "team2": loadteamname02,
+    "win": loadteamname02,
+    "date": formatDate12Hour(now),
+    "team1allpoint": pointaddteam1,
+    "team2allpoint": "21"
+};
+
+// Add the new data to the existing array
+existingData.push(newMatchData);
+
+// Store the updated array back to localStorage
+localStorage.setItem("teamdata", JSON.stringify(existingData));
+
     // Convert the JSON object to a string and create a Blob
-    const jsonString = JSON.stringify(json);
+    const jsonString = JSON.stringify(newMatchData);
     const blob = new Blob([jsonString], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
