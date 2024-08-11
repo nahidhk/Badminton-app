@@ -2,7 +2,8 @@
     font-family: font;
     src: url("/font/font.ttf");
 }
-body{
+
+body {
     background-image: url("/img/bg2.png");
     /* background-repeat: no-repeat; */
     background-size: cover;
@@ -11,55 +12,70 @@ body{
     font-family: font;
     background-color: rgb(214, 233, 250);
 }
-.nav{
+
+.nav {
     height: 70px;
     width: 100%;
-    background-color: #4680ff ;
+    background-color: #4680ff;
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
 }
-.navtext{
+
+.navtext {
     color: #fff;
     font-size: 2rem;
     position: absolute;
     top: 8px;
     left: 50px;
 }
-h1{
-margin:0;
+
+h1 {
+    margin: 0;
 }
-.popup{
+
+.popup {
     top: 50%;
     left: 50%;
     height: 400px;
     width: 90%;
     background-color: #fff;
     position: fixed;
-    transform: translate(-50% , -50%);
-    -webkit-transform: translate(-50% , -50%);
-    -moz-transform: translate(-50% , -50%);
-    -ms-transform: translate(-50% , -50%);
-    -o-transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 30px 0 black;
+    animation: anti 0.5s;
+    z-index: 90;
+}
+
+@keyframes anti {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bg1 {
+    text-align: center;
+    background-image: url("/img/bg.png");
+}
+
+.blr {
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    background-color: #ffffffac;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    box-shadow: 0 0 30px 0 black;
-    animation: anti 0.5s;
-    -webkit-animation: anti 0.5s;
 }
-@keyframes anti{
-    0%{opacity: 0;}100%{opacity: 1;}
-}
-.bg1{
-    text-align: center;
-    background-image: url("/img/bg.png");
-}
-.blr{ backdrop-filter: blur(2px); height: 100%; width: 100%; background-color: #ffffffac; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px;
-}
-.input{
+
+.input {
     background-color: rgba(245, 245, 220, 0);
     color: #000;
     font-size: 1.5rem;
@@ -69,7 +85,8 @@ margin:0;
     outline-color: none;
     border: 1px solid #4680ff;
 }
-.btn{
+
+.btn {
     height: 37px;
     width: 200px;
     background-color: #000000;
@@ -77,13 +94,16 @@ margin:0;
     cursor: pointer;
     color: #fff;
 }
-.vcc{
+
+.vcc {
     display: none;
 }
-.red{
+
+.red {
     color: red;
 }
-.navmenu{
+
+.navmenu {
     position: absolute;
     right: 20px;
     top: 8px;
@@ -91,21 +111,25 @@ margin:0;
     color: #fff;
     font-size: 30px;
 }
-.flex{
+
+.flex {
     height: 100vh;
     width: 100%;
     display: none;
     justify-content: space-between;
 }
-n{
-    color:red;
+
+n {
+    color: red;
 }
-.row{
+
+.row {
     height: 100vh;
     width: 50%;
-    background-image:linear-gradient(100deg,#fff,#e2e2e2) ;
+    background-image: linear-gradient(100deg, #fff, #e2e2e2);
 }
-.point{
+
+.point {
     height: 100px;
     width: 100px;
     border: 1px solid #000;
@@ -122,7 +146,8 @@ n{
     font-family: 'Courier New', Courier, monospace;
     cursor: none;
 }
-.teamname{
+
+.teamname {
     outline: none;
     outline-color: none;
     border: none;
@@ -131,81 +156,125 @@ n{
     font-size: 1.3rem;
     width: 100%;
 }
-.teamname::placeholder{
+
+.teamname::placeholder {
     font-size: 15px;
 }
-.btn1pl{
+
+.btn1pl {
     height: 40px;
     width: 150px;
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
 }
-.win{
+
+.win {
     height: 100vh;
     width: 100%;
     background-color: #0f58f5c7;
     position: fixed;
     top: 0;
 }
-.img{
+
+.img {
     height: 150px;
     width: 150px;
 }
-.img img{
+
+.img img {
     height: 100%;
     width: 100%;
-    animation: img 1s ;
+    animation: img 1s;
     -webkit-animation: img 1s infinite;
-    animation-direction: alternate;  
-}
-@keyframes img{
-    0%{ transform: rotateZ(40deg); -webkit-transform: rotateZ(40deg); -moz-transform: rotateZ(40deg); -ms-transform: rotateZ(40deg); -o-transform: rotateZ(40deg);
+    animation-direction: alternate;
 }
 
-    100%{ transform: rotateZ(-40deg); -webkit-transform: rotateZ(-40deg); -moz-transform: rotateZ(-40deg); -ms-transform: rotateZ(-40deg); -o-transform: rotateZ(-40deg);
+@keyframes img {
+    0% {
+        transform: rotateZ(40deg);
+        -webkit-transform: rotateZ(40deg);
+        -moz-transform: rotateZ(40deg);
+        -ms-transform: rotateZ(40deg);
+        -o-transform: rotateZ(40deg);
+    }
+
+    100% {
+        transform: rotateZ(-40deg);
+        -webkit-transform: rotateZ(-40deg);
+        -moz-transform: rotateZ(-40deg);
+        -ms-transform: rotateZ(-40deg);
+        -o-transform: rotateZ(-40deg);
+    }
 }
-}
-.text{
+
+.text {
     color: #fff;
     font-size: 2rem;
 }
-.fff{
+
+.fff {
     color: #fff;
 }
-.mon > .im{
+
+.mon>.im {
     margin: 20px;
 }
-.stext{
+
+.stext {
     font-size: 2rem;
     font-family: sans-serif;
     color: #000;
 }
-.f12{
+
+.f12 {
     display: block;
     height: 100vh;
     width: 100%;
     background-color: #fff;
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     text-align: center;
 
 }
-.fbs{
-    
+
+.fbs {
+
     position: absolute;
     height: 500px;
     width: 500px;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 }
 
+.menu {
+    top: 0;
+    z-index: 101;
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffffef;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    animation: menu 0.4s;
+    -webkit-animation: menu 0.4s;
+}
+
+@keyframes menu {
+    0% {
+        height: 0vh;
+    }
+
+    100% {
+        height: 100vh;
+    }
+}
+
 @media only screen and (max-width: 600px) {
-    .f12{
+    .f12 {
         display: none;
     }
 }

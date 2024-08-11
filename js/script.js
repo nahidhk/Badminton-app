@@ -2,7 +2,7 @@ console.log("open Badminton App Js");
 
 window.addEventListener('beforeunload', function (e) {
     e.preventDefault();
-    e.returnValue = 'আপনি কি নিশ্চিত যে আপনি পৃষ্ঠাটি পুনরায় লোড করতে চান?';
+    e.returnValue = '?';
 });
 
 // Declare all variables at the start
@@ -241,4 +241,10 @@ function wlcadio(){
 }
 function teamaudio(){
     document.getElementById("teamaudio").play();
+}
+function listok(){
+    document.getElementById("menuopenai").style.display="block";
+}
+function outcls(){
+    document.getElementById("menuopenai").style.display="none"; 
 }
