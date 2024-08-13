@@ -15,18 +15,47 @@
     <audio id="awin" src="audio/win.wav"></audio>
     <audio id="wlcaudio" src="audio/wlc.mp3"></audio>
     <audio id="teamaudio" src="audio/team.mp3"></audio>
- <section class="f12">
-<div class="fbs">
-    <h1>
-        please Re size your window .
-        <br>
-        And tap F12 keybord button .
-        <br>
-        Only screen Size <br>
-        600px - width
-    </h1>
-</div>
- </section>
+    <section class="menuai vcc" id="menuopenai">
+        <button class="close" onclick="outcls()">X</button>
+        <br><br><br>
+        <center>
+            <div class="user">
+                <div class="user1">
+                    <div>
+                        <img src="img/winner.png" alt="" class="winig">
+                    </div>
+                    <div>
+                        <span>date</span><br>
+                        <b>Name</b><br>
+                        <b>point</b>
+                    </div>
+                </div>
+                <div class="user2">
+                    <div>
+                        <img src="img/lose.png" alt="" class="winig">
+                    </div>
+                    <div>
+                        <span>date</span><br>
+                        <b>Name</b><br>
+                        <b>point</b>
+                    </div>
+                </div>
+
+            </div>
+        </center>
+    </section>
+    <section class="f12">
+        <div class="fbs">
+            <h1>
+                please Re size your window .
+                <br>
+                And tap F12 keybord button .
+                <br>
+                Only screen Size <br>
+                600px - width
+            </h1>
+        </div>
+    </section>
     <header class="nav">
         <nav>
             <span class="navtext">
@@ -36,49 +65,41 @@
                 <i class="bi bi-list"></i>
             </span>
         </nav>
-        <section class="menu vcc" id="menuopenai">
-            <center>
-                <h1>
-                    This menu list is Work it .
-                </h1>
-                <button onclick="outcls()">Close</button>
-            </center>
 
-        </section>
     </header>
     <section id="popup1" class="popup bg1">
         <div class="blr">
-        <br>
-        <h1>Set Password</h1>
-        <br>
-        <input onclick="wlcadio()" type="password" class="input" id="okpass" placeholder="New Password">
-        <br><br>
-        <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
-        <br><br>
-        <center>
-            <button onclick="setpass()" id="logbtn" class="btn vcc">Set Password</button>
-        </center>
-        <br>
-        <span id="error" class="red vcc"> Password Don't macth !
-        </span>
-    </div>
+            <br>
+            <h1>Set Password</h1>
+            <br>
+            <input onclick="wlcadio()" type="password" class="input" id="okpass" placeholder="New Password">
+            <br><br>
+            <input oninput="conpass()" type="password" class="input" id="conpass" placeholder="Conform Password">
+            <br><br>
+            <center>
+                <button onclick="setpass()" id="logbtn" class="btn vcc">Set Password</button>
+            </center>
+            <br>
+            <span id="error" class="red vcc"> Password Don't macth !
+            </span>
+        </div>
     </section>
     <!-- login -->
     <section class="popup bg1 vcc" id="popup2">
         <div class="blr">
             <br>
-        <h1>Login</h1>
-        <br><br>
-        <n id="rong"></n>
-        <input oninput="oninti()" type="password" class="input" id="login" placeholder="Password">
-        <br><br>
-        <button onclick="logindat()" class="btn">Login</button>
-        <br>
-        <br>
-        <a href="restpass">
-            Forgotten password
-        </a>
-    </div>
+            <h1>Login</h1>
+            <br><br>
+            <n id="rong"></n>
+            <input oninput="oninti()" type="password" class="input" id="login" placeholder="Password">
+            <br><br>
+            <button onclick="logindat()" class="btn">Login</button>
+            <br>
+            <br>
+            <a href="restpass">
+                Forgotten password
+            </a>
+        </div>
     </section>
     <!-- team input system  -->
     <section id="roxix" class="popup vcc mon">
@@ -146,7 +167,7 @@
                 </h1>
                 <p class="fff">You can save this match on a server and download it.</p>
                 <span id="cbtn">
-                    
+
                 </span>
             </div>
             </div>

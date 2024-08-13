@@ -251,7 +251,7 @@ n {
     left: 50%;
 }
 
-.menu {
+.menuai {
     top: 0;
     z-index: 101;
     height: 100vh;
@@ -262,7 +262,20 @@ n {
     animation: menu 0.4s;
     -webkit-animation: menu 0.4s;
 }
-
+.close{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #00000000;
+    border: 1px solid #000;
+    font-size: 25px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+}
 @keyframes menu {
     0% {
         height: 0vh;
@@ -272,7 +285,27 @@ n {
         height: 100vh;
     }
 }
-
+.user{
+    height: 100px;
+    width: 90%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.user1 , .user2{
+    display: flex;
+    border-right: 1px solid #000;
+    width: 50%;
+    text-align: center;
+}
+.winig{
+    height: 90px;
+}
 @media only screen and (max-width: 600px) {
     .f12 {
         display: none;
