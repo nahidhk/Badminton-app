@@ -159,24 +159,23 @@ function winteam1() {
     var pointaddteam2 = sessionStorage.getItem("addpoint2");
     var name = loadteamname01 + "VS" + loadteamname02;
     // Create a JSON object
-   // Load existing data from localStorage
-let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
+    // Load existing data from localStorage
+    let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
 
-// Create new match data
-const newMatchData = {
-    "team1": loadteamname01,
-    "team2": loadteamname02,
-    "win": loadteamname01,
-    "date": formatDate12Hour(now),
-    "team1allpoint": "21",
-    "team2allpoint": pointaddteam2
-};
+    // Create new match data
+    const newMatchData = {
+        "win": loadteamname01,
+        "notwin": loadteamname02,
+        "date": formatDate12Hour(now),
+        "notwinpoint": pointaddteam2,
+        "winpoint": "21"
+    };
 
-// Add the new data to the existing array
-existingData.push(newMatchData);
+    // Add the new data to the existing array
+    existingData.push(newMatchData);
 
-// Store the updated array back to localStorage
-localStorage.setItem("teamdata", JSON.stringify(existingData));
+    // Store the updated array back to localStorage
+    localStorage.setItem("teamdata", JSON.stringify(existingData));
 
     // Convert the JSON object to a string and create a Blob
     const jsonString = JSON.stringify(newMatchData);
@@ -198,24 +197,23 @@ function winteam2() {
     var pointaddteam1 = sessionStorage.getItem("addpoint1");
     var name = loadteamname01 + "VS" + loadteamname02;
     // Create a JSON object
- // Load existing data from localStorage
-let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
+    // Load existing data from localStorage
+    let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
 
-// Create new match data
-const newMatchData = {
-    "team1": loadteamname01,
-    "team2": loadteamname02,
-    "win": loadteamname02,
-    "date": formatDate12Hour(now),
-    "team1allpoint": pointaddteam1,
-    "team2allpoint": "21"
-};
+    // Create new match data
+    const newMatchData = {
+        "notwin": loadteamname01,
+        "win": loadteamname02,
+        "date": formatDate12Hour(now),
+        "notwinpoint": pointaddteam1,
+        "winpoint": "21"
+    };
 
-// Add the new data to the existing array
-existingData.push(newMatchData);
+    // Add the new data to the existing array
+    existingData.push(newMatchData);
 
-// Store the updated array back to localStorage
-localStorage.setItem("teamdata", JSON.stringify(existingData));
+    // Store the updated array back to localStorage
+    localStorage.setItem("teamdata", JSON.stringify(existingData));
 
     // Convert the JSON object to a string and create a Blob
     const jsonString = JSON.stringify(newMatchData);
@@ -230,21 +228,74 @@ localStorage.setItem("teamdata", JSON.stringify(existingData));
     window.location.href = "/"
 }
 
-function audioapkclick(){
+function audioapkclick() {
     document.getElementById("aclick").play();
 }
-function winaudio(){
+function winaudio() {
     document.getElementById("awin").play();
 }
-function wlcadio(){
+function wlcadio() {
     document.getElementById("wlcaudio").play();
 }
-function teamaudio(){
+function teamaudio() {
     document.getElementById("teamaudio").play();
 }
-function listok(){
-    document.getElementById("menuopenai").style.display="block";
+function listok() {
+    document.getElementById("menuopenai").style.display = "block";
 }
-function outcls(){
-    document.getElementById("menuopenai").style.display="none"; 
+function outcls() {
+    document.getElementById("menuopenai").style.display = "none";
 }
+
+
+
+// Load Local Storage data
+var userdatajson = localStorage.getItem("teamdata");
+console.log(userdatajson);
+
+async function displayData() {
+    try {
+        const data = JSON.parse(userdatajson);
+        const dataContainer = document.getElementById('data-container');
+
+        if (!dataContainer) {
+            throw new Error("Element with id 'data-container' not found.");
+        }
+
+        // Loop through the data and display it
+        data.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <div class="user">
+                    <div class="user1">
+                        <div>
+                            <img src="img/winner.png" alt="" class="winig">
+                        </div>
+                        <div>
+                            <span class='datetext'>${item.date}</span><br>
+                            Name: <b style='color:green'>${item.win}</b><br>
+                            Point: <b>${item.winpoint}</b>
+                        </div>
+                    </div>
+                    <div class="user2">
+                        <div>
+                            <img src="img/lose.png" alt="" class="winig">
+                        </div>
+                        <div>
+                            <span class='datetext'>${item.date}</span><br>
+                            Name: <b style="color:red">${item.notwin}</</b><br>
+                            Point: <b>${item.notwinpoint}</b>
+                        </div>
+                    </div>
+                </div>
+            `;
+            dataContainer.appendChild(itemElement);
+        });
+    } catch (error) {
+        console.error('Data error', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    displayData();
+});

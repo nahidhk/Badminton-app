@@ -252,6 +252,7 @@ n {
 }
 
 .menuai {
+    overflow: scroll;
     top: 0;
     z-index: 101;
     height: 100vh;
@@ -261,9 +262,10 @@ n {
     position: fixed;
     animation: menu 0.4s;
     -webkit-animation: menu 0.4s;
+    
 }
 .close{
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     background-color: #00000000;
@@ -286,7 +288,8 @@ n {
     }
 }
 .user{
-    height: 100px;
+    font-family: sans-serif;
+    height: 100%;
     width: 90%;
     border: 1px solid red;
     display: flex;
@@ -296,15 +299,19 @@ n {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    margin-top: 10px;
 }
 .user1 , .user2{
-    display: flex;
+    /* display: flex; */
     border-right: 1px solid #000;
     width: 50%;
     text-align: center;
 }
 .winig{
     height: 90px;
+}
+.datetext{
+    font-size: 10px;
 }
 @media only screen and (max-width: 600px) {
     .f12 {
