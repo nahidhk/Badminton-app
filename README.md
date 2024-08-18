@@ -10,15 +10,15 @@
 
 <h2>Project Screenshots:</h2>
 <div style="dispaly:flex">
-<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss1.png?raw=true" alt="project-screenshot" width="180" height="280/">
+<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss1.png?raw=true" alt="project-screenshot" width="250" height="380/">
 
-<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss2.png?raw=true" alt="project-screenshot" width="180" height="280/">
+<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss2.png?raw=true" alt="project-screenshot" width="250" height="380/">
 
-<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss3.png?raw=true" alt="project-screenshot" width="180" height="280/">
+<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss3.png?raw=true" alt="project-screenshot" width="250" height="380/">
 
-<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss4.png?raw=true" alt="project-screenshot" width="180" height="280/">
+<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss4.png?raw=true" alt="project-screenshot" width="250" height="380/">
 
-<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss6.png?raw=true" alt="project-screenshot" width="180" height="280/">
+<img src="https://github.com/nahidhk/Badminton-app/blob/main/img/ss6.png?raw=true" alt="project-screenshot" width="250" height="380/">
 </div>
   
   
