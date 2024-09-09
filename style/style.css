@@ -94,7 +94,9 @@ h1 {
     cursor: pointer;
     color: #fff;
 }
-
+.im{
+    margin: 10px;
+}
 .vcc {
     display: none;
 }

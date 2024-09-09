@@ -1,9 +1,9 @@
 console.log("open Badminton App Js");
 
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    e.returnValue = '?';
-});
+// window.addEventListener('beforeunload', function (e) {
+//     e.preventDefault();
+//     e.returnValue = '?';
+// });
 
 // Declare all variables at the start
 var logpopup = localStorage.getItem("setbox");
@@ -158,11 +158,8 @@ function winteam1() {
     const loadteamname02 = sessionStorage.getItem("steamname2");
     var pointaddteam2 = sessionStorage.getItem("addpoint2");
     var name = loadteamname01 + "VS" + loadteamname02;
-    // Create a JSON object
-    // Load existing data from localStorage
     let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
 
-    // Create new match data
     const newMatchData = {
         "win": loadteamname01,
         "notwin": loadteamname02,
@@ -171,13 +168,11 @@ function winteam1() {
         "winpoint": "21"
     };
 
-    // Add the new data to the existing array
+   
     existingData.push(newMatchData);
 
-    // Store the updated array back to localStorage
     localStorage.setItem("teamdata", JSON.stringify(existingData));
 
-    // Convert the JSON object to a string and create a Blob
     const jsonString = JSON.stringify(newMatchData);
     const blob = new Blob([jsonString], { type: "application/json" });
     const link = document.createElement("a");
@@ -196,11 +191,7 @@ function winteam2() {
     const loadteamname02 = sessionStorage.getItem("steamname2");
     var pointaddteam1 = sessionStorage.getItem("addpoint1");
     var name = loadteamname01 + "VS" + loadteamname02;
-    // Create a JSON object
-    // Load existing data from localStorage
     let existingData = JSON.parse(localStorage.getItem("teamdata")) || [];
-
-    // Create new match data
     const newMatchData = {
         "notwin": loadteamname01,
         "win": loadteamname02,
@@ -208,14 +199,8 @@ function winteam2() {
         "notwinpoint": pointaddteam1,
         "winpoint": "21"
     };
-
-    // Add the new data to the existing array
     existingData.push(newMatchData);
-
-    // Store the updated array back to localStorage
     localStorage.setItem("teamdata", JSON.stringify(existingData));
-
-    // Convert the JSON object to a string and create a Blob
     const jsonString = JSON.stringify(newMatchData);
     const blob = new Blob([jsonString], { type: "application/json" });
     const link = document.createElement("a");
@@ -247,12 +232,8 @@ function outcls() {
     document.getElementById("menuopenai").style.display = "none";
 }
 
-
-
-// Load Local Storage data
 var userdatajson = localStorage.getItem("teamdata");
 console.log(userdatajson);
-
 async function displayData() {
     try {
         const data = JSON.parse(userdatajson);
@@ -262,7 +243,6 @@ async function displayData() {
             throw new Error("Element with id 'data-container' not found.");
         }
 
-        // Loop through the data and display it
         data.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.innerHTML = `
@@ -299,3 +279,19 @@ async function displayData() {
 document.addEventListener('DOMContentLoaded', (event) => {
     displayData();
 });
+
+
+const timeity = new Date().toISOString().slice(0, 10); 
+function backup() {
+    let newtem = localStorage.getItem("teamdata"); 
+    if (newtem) {  
+        const blink = document.createElement("a");
+        blink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(newtem); 
+        blink.download = `Backupdate-${timeity}.json`;  
+        document.body.appendChild(blink);
+        blink.click(); 
+        document.body.removeChild(blink);  
+    } else {
+        console.log("No data found in localStorage!");
+    }
+}
